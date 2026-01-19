@@ -1,0 +1,5 @@
+stack(
+  s("[mpc1000_bd mpc1000_bd mpc1000_bd mpc1000_bd], [[cp cp mpc1000_oh mpc1000_sd] [cp cp]]"),
+  s("[gm_electric_bass_finger gm_slap_bass_1]").gain(0.3),
+  s("<[mpc1000_hh*16]>").gain(0.5)
+)
