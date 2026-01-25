@@ -1,0 +1,14 @@
+samples({
+  bass: 'https://cdn.freesound.org/previews/383/383700_394391-lq.mp3',
+})
+
+$: s("[yamahary30_hh yamahary30_hh yamahary30_hh yamahary30_hh](3,8,<0 2 0 1>), <korgddm110_h>").gain(0.3)
+$: s("[akaimpc60_rim 9000_rim doepferms404_oh](7,8)").gain(0.5)
+$: s("[[bass] ~ ~ [bass*2]] [gm_voice_oohs:5?0.1]/4")
+$: s("~ ~ ~ ~ [yamaharm50_cb|yamaharx5_tb]").gain(0.1)
+$: s("yamaharm50_tb*8 ~ (5,8)").gain(0.2)
+
+
+
+
+

@@ -1,0 +1,9 @@
+samples ('github:tidalcycles/dirt-samples')
+setcpm(180/4)
+
+//s("jungle:0 jungle:1 jungle:2 jungle:3 jungle:4 jungle:5")
+
+$: s("[jungle:5 ~ jungle:5 ~ ~ jungle:5 ~], [~ jungle:12 ~ jungle: 11 jungle:12?0.01 ~ ~]")
+$: s("jungle:0*12").gain(0.3)
+
+

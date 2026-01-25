@@ -1,0 +1,8 @@
+
+//housebeat
+
+$: s("[bd <hh:1 oh>]*4").bank('rolandsystem100')
+
+$: s("[emusp12_hh emusp12_hh emusp12_hh [rolandtr909_cp*16|insect*4]]/4").gain(0.5)
+
+$: s("<didgeridoo:10 didgeridoo:1 didgeridoo:2>").slow(4).gain(0.5)

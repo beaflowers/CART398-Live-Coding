@@ -1,0 +1,14 @@
+samples('github:tidalcycles/dirt-samples')
+samples({
+  deepnoise: 'https://cdn.freesound.org/previews/748/748328_12880153-lq.mp3',
+  bassy: 'https://cdn.freesound.org/previews/328/328210_1015240-lq.mp3'
+})
+
+#the bassy sound kicking in is nice, but doesnt happen immediately
+
+$: s("<~ ~ ~ [doepferms404_oh*8]>").gain(0.3)
+$: s("doepferms404_lt*3 doepferms404_bd ~ ~ ~")
+$: s("[bass0:1|bass0:2], <bass0@0 bass0@1>").gain(0.1)
+$: s("[glitch:2 glitch:2 glitch:2 glitch:5](3,8), <[~ ~ glitch2:3 ~]>").gain(0.5)
+$: s("deepnoise").sustain(32).gain(0.3)
+$: s("bassy").sustain(16).slow(8)

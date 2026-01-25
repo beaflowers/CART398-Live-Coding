@@ -1,0 +1,6 @@
+samples('github:tidalcycles/dirt-samples')
+
+$: s("<~ ~ ~ [doepferms404_oh*8]>").gain(0.3)
+$: s("doepferms404_lt*3 doepferms404_bd ~ ~ ~")
+$: s("[bass0:1|bass0:2], <bass0@0 bass0@1>").gain(0.1)
+$: s("[glitch:2 glitch:2 glitch:2 glitch:5](3,8), <[~ ~ glitch2:3 ~]>").gain(0.5)

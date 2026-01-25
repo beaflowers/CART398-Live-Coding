@@ -1,0 +1,15 @@
+samples({
+  ch_cowbell: 'https://cdn.freesound.org/previews/833/833687_17675683-lq.mp3',
+  vocal_down: 'https://cdn.freesound.org/previews/651/651683_13938177-lq.mp3',
+  xiaoluo: 'https://cdn.freesound.org/previews/222/222357_2385996-lq.mp3',
+  bangu: 'https://cdn.freesound.org/previews/222/222186_2385996-lq.mp3',
+  
+  
+})
+
+$: s("[bangu*7](7,12)")
+$: s("~ ~ ch_cowbell ~ [ch_cowbell*2] ~(5,8)")
+$: s("[xiaoluo ~ ~ ~ xiaoluo?.3 ~ ~ ~ xiaoluo ~ ~ ~]/6")
+$: s("~ ~ ~ ~ ~ [vocal_down?0.1]/4")
+
+  
