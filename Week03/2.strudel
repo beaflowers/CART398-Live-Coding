@@ -1,0 +1,4 @@
+samples('github:tidalcycles/dirt-samples')
+
+$: note(scale("C1:ionian", "[0 2 [3 10 7] 8]*2, [5 6 5 6]")).s("pluck")
+$: note(scale("C4: minor", "<9 8 7 6>")).s("pluck")

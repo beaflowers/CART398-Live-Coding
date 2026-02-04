@@ -1,0 +1,8 @@
+$: s("[[shaker_small:0 shaker_small:1 shaker_small:3 shakersmall:2] [shaker_large:0 shaker_large:1 shaker_large:2 shaker_large:5]](9, 12)")
+
+$: s("ajkpercusyn_bd*3 (9, 12, <0 1 0 1>)")
+
+$: s("ace_lt*5(7,12)")
+
+$: s("<[alesishr16_rim*3(5,12)][ace_oh*3(5,12)][ace_hh*3[5,12]]>")
+

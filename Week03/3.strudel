@@ -1,0 +1,1 @@
+note("60 ~ 65 67 65").s("harp").legato(3).degrade().add("<0 0 2 4>")

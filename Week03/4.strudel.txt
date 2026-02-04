@@ -1,0 +1,2 @@
+$: n(scale("C7:minor", "[[4 2 8]], <0 8 10>")).s("pluck").slow(2)
+$: s("bd bd bd bd, [[~ hh] [~ hh]]*2")
