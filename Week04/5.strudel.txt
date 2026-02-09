@@ -1,0 +1,7 @@
+$: s("bd bd ~ bd bd ~, [[hh*4] cp ~]")
+.every(4, x=>x.ply(2))
+.room(0.2)
+.bank("korgm1")
+.sometimes(x=>x.room(0.9))
+
+$: n("3 3 3 4 4 [44 44]").sound("gm_fx_rain")

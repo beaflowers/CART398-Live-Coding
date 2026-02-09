@@ -1,0 +1,21 @@
+$: n("[6 ~ 6] [5, 7]*2 9 [7 4]").scale("<augmented bebop:major>")
+    .sound("gm_guitar_fret_noise")
+    .every(3, rev())
+    .gain("<0.3 0.4 0.5>")
+    .sometimes(x=>x.struct("~ ~ ~ ~ ~"))
+    .room(0.8)
+
+$:n("0 0 0 1 1 1")
+  .sound("gm_pad_warm")
+  .scale("G:augmented")
+  .room(0.6)
+  .gain(0.6)
+  .sometimes(x=>x.ply(3))
+
+
+$: s("bd bd bd bd, [[~ hh] [~ hh]]*2")
+  .bank("compurhythm1000")
+  .delay(0.6)
+  .every(4, x=>x.ply(2))
+
+$: chord("A [G G]").voicing().sound('gm_synth_choir').transpose(-13)

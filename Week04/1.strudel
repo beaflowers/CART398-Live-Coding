@@ -1,0 +1,9 @@
+$: note("[0, 4] 3 [0, -4] 7")
+  .sound("psaltery_pluck")
+  .scale("<G3:ionian:pentatonic E3:kumoijoshi>")
+  .every(4, x=>x.rev())
+  .sometimes(x=>x.ply(3))
+
+$: chord("<[Am E Am E] [F Cm F Cm] [G D G Dm]>").voicing().sound("harp").sometimes(x=>x.struct("x ~ x ~"))
+
+$: s("hh*4 ~ ~ hh*4").bank('rolandjd990').room(0.6).legato(0.2).sometimes(x=>x.euclid(5,8))

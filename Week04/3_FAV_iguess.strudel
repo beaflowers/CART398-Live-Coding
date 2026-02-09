@@ -1,0 +1,12 @@
+//setcpm(180/60/4)
+samples({
+  robot: 'https://cdn.freesound.org/previews/654/654059_9573665-lq.mp3',
+  sigh: 'https://cdn.freesound.org/previews/469/469096_9634718-lq.mp3'
+})
+
+$: s("robot").loop(1).loopEnd(0.15).slice(6, "000000")
+$: s("robot").begin("<0.72 0.82>").room(0.4)
+$: s("robot").begin(0.6).end(0.69).scrub("<0.5 0.3>").sometimes(x=>x.struct("~"))
+$: s("sigh").end(0.35).sometimes(x=>x.rev()).room(0.9)
+
+$: s("[bd ~ ~ bd]").room(0.6).bank("compurhythm8000").delay(0.3)
