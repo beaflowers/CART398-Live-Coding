@@ -1,0 +1,12 @@
+samples('github:beaflowers/LiveCoding')
+
+$: s("vocals:1").slow(8).slice(5, "2 [1 2 3] 2 [3 4 5]").clip("<0.6 0.8 1>").gain("[0.25 1]*4")
+//$: s("vocals:1").slow(8).scrub("<0.1 0.4 0.7@2 0.8>")
+
+$: s("[~!3 sd ~!2 sd ~]*2").bank("rolandd70").every(8, x=>x.delay(0.3)).gain(0.7).lpf("<2500 3000 5000 8000>")
+
+$: s("kick:1*4").room(.3)
+
+$: s("hh*16").speed(saw.slow(2).add(4)).pan(square.fast(8))
+
+

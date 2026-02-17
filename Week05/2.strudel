@@ -1,0 +1,24 @@
+samples('github:beaflowers/LiveCoding')
+
+
+$: note("[0, 2, 4] [1, 3, 5]*2").scale("a1:major")
+  .octave('2')
+  .gain("[0.1 0.5]*4")
+  .decay(0.8)
+  .cutoff(perlin.range(500,8000))
+  .pan(square.fast(2))
+  
+  $: s("casio*16")
+    .speed(saw.fast(3))
+    .gain(0.1)
+    .delay(0.3)
+    .release(1)
+    .dfb(0.6)
+    .lpf("1000")
+
+$: s("~ sd ~ sd*2").bank('compurhythm78')
+  .room(0.3)
+  .sometimes(x=>x.struct("x ~ ~ x"))
+  .every(2, x=>x.ply(2))
+  .gain(0.3)
+  .decay(0.8)
