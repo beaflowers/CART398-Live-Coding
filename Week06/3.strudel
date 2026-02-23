@@ -1,0 +1,14 @@
+samples('github:beaflowers/LiveCoding')
+
+// $: note("<[D F [G G] D] [D F [A A] F]>").sound("gm_guitar_harmonics")
+//   .room(0.4)
+//   .legato("0.3 0.4 0.2 0.6")
+//   .every(4, x=>x.lpf("<1500 3000>"))
+
+$: s("[cr cr ! [[cr cr] ~ cr]]").bank("bossdr550").gain("<[0.75 1]*4>")
+
+$: s("[bd bd [bd bd] bd]*2, [sd ! [sd sd] sd]").bank("circuitsdrumtracks")
+
+$: note("<[D F [G G] D] [D F [A A] F]>").sound("gm_distortion_guitar")
+  .delay(0.5)
+  .lpf("<1000 1500 2000 2500 3000>")

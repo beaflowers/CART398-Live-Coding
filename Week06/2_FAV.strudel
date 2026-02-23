@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+let sec1 = stack(
+  s("bd sd [bd bd] sd").bank("compurhythm1000"),
+  note("[c4 c3]*4").transpose("<0 -2 5 3>").sound("saw").room(0.4).delay(0.3) 
+)
+
+let sec2 = stack(
+ note("[c4 c3]*4").transpose("<0 -2 5 3>").sound("saw").room(0.4).delay(0.6).decay(0.2).scale("A:pentatonic"),
+ s("bd ~ sd [bd bd bd]").bank("compurhythm1000")
+  )
+
+let sec3 = stack(
+  s("bd bd [bd bd] bd").bank("compurhythm1000"),
+  s("hh * 8").bank("compurhythm1000"),
+  note("[c4 c3]*4").transpose("<8 4 12 8>").sound("saw").room(0.4).delay(0.3) 
+)
+
+$: arrange(
+  [6, sec1],
+  [4, sec2],
+  [4, sec3],
+  [4, sec1.room(0.5).decay("<0.8 0.6 0.4 0.2>").slow(1).delay(0.5).gain("<1 0.75 0.5 0.25>")]
+)
+
+

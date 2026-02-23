@@ -1,0 +1,21 @@
+samples('github:beaflowers/LiveCoding')
+
+let mel = stack(
+  chord("Am@2 Am D!3 Em!2 Em").voicing()
+  .room(0.3)
+  .sound("<saw@3 supersaw>")
+  .every(4, x=>x.slow(2))
+  .delay(0.3)
+)
+
+let kick = stack(
+  s("[kick:1!2] kick:1 kick:1 kick")
+  .room(0.4)
+  .delay(0.2)
+  .every(3, x=>x.struct("x ~ x ~").gain("<0.5 0.75>"))
+)
+
+$: arrange(
+  [2, mel],
+  [4, kick]
+)
