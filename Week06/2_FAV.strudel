@@ -1,32 +1,52 @@
-
-
-
-
-
-
-
+//haha i think its a post punk song sort of
 
 let sec1 = stack(
-  s("bd sd [bd bd] sd").bank("compurhythm1000"),
-  note("[c4 c3]*4").transpose("<0 -2 5 3>").sound("saw").room(0.4).delay(0.3) 
+  s("bd sd [bd bd] sd").bank("drumulator")
+  .room(0.3)
+  .delay(0.3)
+  ,
+  note("[c4 c3]*4")
+  .transpose("<0 -2 5 3>")
+  .sound("saw")
+  .room(0.4)
+  .delay(0.3) 
+  .gain("<0 0 0.3 0.5 0.7 1 1>")
 )
 
 let sec2 = stack(
- note("[c4 c3]*4").transpose("<0 -2 5 3>").sound("saw").room(0.4).delay(0.6).decay(0.2).scale("A:pentatonic"),
- s("bd ~ sd [bd bd bd]").bank("compurhythm1000")
+ note("[c4 c3]*4").transpose("<0 -2 5 3>").sound("saw").room(0.4).delay(0.6).scale("A:pentatonic"),
+ s("bd ~ sd [bd bd bd]").bank("drumulator").room(0.3).delay(0.3)
   )
 
 let sec3 = stack(
-  s("bd bd [bd bd] bd").bank("compurhythm1000"),
-  s("hh * 8").bank("compurhythm1000"),
-  note("[c4 c3]*4").transpose("<8 4 12 8>").sound("saw").room(0.4).delay(0.3) 
+  s("bd sd [bd bd] [bd sd]").bank("drumulator")
+  .room(0.3)
+  .delay(0.2)
+  .every(2, x=>x.struct("x x ~ x").ply(2))
+  ,
+  s("hh * 8").bank("compurhythm1000").lpf("<8000 12000 15000 20000>"),
+  note("[c4 c3]*4").transpose("<8 4 12 14>").sound("saw").room(0.4).delay(0.3),
+  s("casio*16").speed(saw.slow(8).add(4)).room(0.8).gain(0.3)
+)
+
+let sec4 = stack(
+   s("bd sd [bd bd] sd").bank("drumulator")
+  .room(0.3)
+  .delay(0.3)
+  ,
+  note("[c4 c3]*4")
+  .transpose("<0 -2 -4 -6>")
+  .sound("saw")
+  .room(0.4)
+  .delay(0.3) 
+  .degradeBy("<0.3 0.5 0.6 0.8>")
 )
 
 $: arrange(
   [6, sec1],
-  [4, sec2],
+  [2, sec2],
   [4, sec3],
-  [4, sec1.room(0.5).decay("<0.8 0.6 0.4 0.2>").slow(1).delay(0.5).gain("<1 0.75 0.5 0.25>")]
+  [4, sec4.room(0.5).slow(1).gain("<1 0.75 0.5 0.25>")]
 )
 
 
