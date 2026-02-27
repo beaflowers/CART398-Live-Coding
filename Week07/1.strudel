@@ -1,0 +1,23 @@
+//trying out mobile motion controls
+//a lot of them feel like the same thing - ie changing rotation feels like similar interaction
+//to changing gravity... 
+//how to tweak so it sounds distinct?
+
+
+enableMotion()
+
+$: chord("[A@4 E@8 D@2 C@2]/2").voicing().sound("gm_choir_aahs")
+.scale("A:minor")
+.lpf(gravityY.range(200, 700))
+.gain(accelerationY)
+.room(rotZ.range(0.3, 10))
+.delay(gravityY.range(0.2, 0.8))
+
+$: s("[[hh*4] ~ ~ ~ [hh hh] ~ ~ hh]/4").delay(0.8).gain(accX).bank("ace")
+.room(oriB.range(0.2, 2))
+
+$: s("[[bd bd] ~ ~ ~]/2").gain(accY).bank("rolandcompurhythm1000")
+.delay(gravityX.range(0.2, 1))
+.ply(oriG.range(-1, 2))
+
+

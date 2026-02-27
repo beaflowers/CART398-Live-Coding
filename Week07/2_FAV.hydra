@@ -1,0 +1,13 @@
+osc(3,1,10)
+.rotate(() => Math.sin(time)/4)
+.add(
+  noise(3,0.2)
+    .scale(1.5)
+    .posterize(4)
+    .blend(
+      voronoi(2,0.3,2)
+        .colorama(0.2)
+        .posterize(3)
+    )
+  )
+.out()
