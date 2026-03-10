@@ -1,0 +1,37 @@
+// @title ugh idk i hate everything i make right now
+// @by bea
+
+// $: n("0 [12 14] <13 15> [~ <4 1>]".add("<0 [2,4,6]>"))
+//   .scale("phrygian")
+// .sound("gm_koto")
+// .delay(0.3)
+// .firstOf(4, x=> x.release(2))
+
+
+// $: n("[0,2,4] [[2,4,6] [6,8,10]] <[8, 10, 12] [2,4,6]>").add("0 4")
+//   .scale("phrygian")
+//   .sound("gm_fx_atmosphere")
+//   .delay(0.3)
+//   .release(2)
+
+$: n("[0 4 8 2]*4")
+  .sound("gm_fx_atmosphere")
+  .scale("phrygian")
+  .attack(0.3)
+  .sustain(0.7)
+  .gain(sine.range(0.3, 1))
+  .room(1)
+
+$: s("<[bd bd [bd bd] bd] [bd bd bd bd] [bd bd [sd sd] bd] [bd bd bd [bd bd]]>").bank("rolandcompurhythm8000")
+.room(0.5).size(5).gain(5)
+.delay(0.3)
+.firstOf(4, x=>x.struct("x ~ ~ x").ply(2))
+
+$: s("hh*8 oh*4").bank("rolandcompurhythm8000")
+.room(0.6)
+//.delay(0.6)
+.speed(sine.range(0.6, 1))
+.rarely(x=>x.struct("~ x"))
+.gain("<0.5 0.25>")
+
+

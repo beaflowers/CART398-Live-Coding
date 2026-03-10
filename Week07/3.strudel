@@ -1,0 +1,34 @@
+// @title trying to get back into it
+// @by bea
+
+cps(180/4)
+
+$: s("<[bd sd bd sd] [bd sd bd sd] [bd sd bd bd] [bd sd bd [oh oh]]>").bank("microrhythmer12")
+.room(0.2)
+.sustain(4)
+.sometimes(x=>x.ply(2))
+
+$: s("4@4 2@2 1@4 4@2").sound("supersaw")
+.attack(0.2)
+.decay(0.2)
+.room(0.5).size(8)
+.lpf("<2000 3000 5000 8000>")
+.every(2, x=>x.late(2))
+
+$:s("[hh*8]*4").bank("microrhythmer12").pan(square.fast(2))
+
+$:s("~ ~ ~ [oh oh oh oh]").bank("spacedrum")
+.room(0.5)
+.gain("[0.5 2]*4")
+.sustain(4)
+.release(3)
+
+$: note("[[[C5@4] D5@4 C5@4] G5]/8").sound("gm_overdriven_guitar:5")
+.sustain(4)
+.lpf(1500)
+
+
+//$: note("[G2@8 A2@8]").sound("gm_guitar_harmonics")
+
+                                           
+

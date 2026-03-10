@@ -1,0 +1,7 @@
+
+x = () => mouse.x/width // 0→1
+y = () => mouse.y/height // 0→1
+
+s1.initCam()
+
+noise(7, 0.1).color(0.6, 0.5, 1).colorama(x).posterize(20, 1, 0.5).kaleid(2).scale(3, 0.9).saturate(y).add(src(s1).scale(0.8)).add(osc(2, 2, 0.4).rotate(Math.sin(2*time)+0.5).color(0.5, 0, 0.3).add(noise(y, 0.1).color(0, 1, 0))).out();a
