@@ -1,0 +1,22 @@
+//@by bea
+
+samples('github:beaflowers/LiveCoding')
+
+//drums
+$: s("kick*8").gain(Math.sin)
+$: s("bd*4").bank("rolandjd990").decay(2).delay(0.3).release(0.4) //.lpf("<2000 1500 2500>")
+//$: s("~ [mt mt] ~ ~ mt mt").bank("rolandjd990").ply(2).delay(0.3).gain(0.8)
+$: s(" ~ hh ~ tb*2 ~ ~ hh*4").gain(2).delay(0.2).bank("rolandjd990")
+
+
+//mids
+
+$: s("gm_voice_oohs:2" ).room(0.5).attack(0.6).decay(5)
+$: s("vocals:3").begin(0.58).end(0.621).speed("<0.75 1 1.5 0.9>").room(0.9).size(10).sometimes(x=>x.struct("~"))
+
+//bass
+
+//highs
+
+
+

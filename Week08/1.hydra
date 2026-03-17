@@ -1,0 +1,23 @@
+
+x = () => mouse.x/width // 0→1
+y = () => mouse.y/height // 0→1
+
+s1.initCam()
+
+noise(7, 0.1)
+  .color(0.6, 0.5, 1)
+  .colorama(0.6)
+  //.posterize(20, 1, 0.5)
+  .kaleid(4)
+  .scale(3, 0.9)
+  .saturate(1)
+  .diff(src(s1)
+       .scale(0.8)
+       .invert())
+  .add(osc(2, 2, 0.4)
+       .saturate(0.3)
+       .rotate(Math.sin(2*time)+0.5)
+       .color(0.5, 0, 0.3)
+       .add(noise(8, 0.1)
+            .color(0, 0.5, 0)))
+  .out()
