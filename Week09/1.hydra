@@ -1,0 +1,24 @@
+
+s3.initCam()
+
+osc(P("2, 3, 4, 5, 6"), P("2, 3, 8"), 0.5)
+.rotate( () => time%360 )
+.color(1, 0.5, 0.5)
+.modulate(voronoi(90, 0.2, 0.4), 0.5).add(noise(P("2, 4, 6, 7"), 0.1, 2))
+.modulatePixelate(noise(6, 0.1,1),200)
+.out(o0)
+
+src(o0)
+.modulateKaleid(noise(10,0.5,0),20)
+// .add(shape(7, 0.4, 0.1)
+//   .repeat(5,3)
+//   .scrollY(-1, -0.4)
+//   .color(1, 0, 0)
+//   .saturate(2))
+//   .diff(src(o3), 20)
+.out(o1)
+
+src(s3)
+.out(o3)
+
+render(o1)

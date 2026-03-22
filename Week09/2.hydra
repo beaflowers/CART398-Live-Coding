@@ -1,0 +1,32 @@
+s0.initScreen()
+
+src(s0)
+  .scale(5)
+  .saturate(3)
+  //.invert()
+  .out(s0)
+
+osc(4, 1, 2)
+.modulate(s0, 2)
+.scale(1.5)
+//.rotate(Math.sin(time)*2)
+.blend(noise(3, 0.2 ,0.4).luma(0.5).scale(10).colorama(0.6).invert())
+.modulate(src(o2).rotate(() => time%360 ))
+.out(o1)
+
+noise(1, 2, 1)
+.add(voronoi(4, 0.3, 1).colorama(0.3).color(1, 1, 0).brightness(-0.5))
+.add(noise(()=>a.fft[1], 0.2, 0.2).posterize(3))
+.kaleid(6)
+.invert()
+.out(o2)
+
+render(o1)
+
+a.show()
+a.setBins(4)
+a.setSmooth(0.4)
+a.setCutoff(5)
+a.setScale(4)
+
+
