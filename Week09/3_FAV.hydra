@@ -1,0 +1,23 @@
+
+s0.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/Final/firelily.mp4")
+
+
+src(s0)
+  .modulate(noise(1, 0.1)
+           .colorama(0.2)
+           .rotate(() => (time%360)/4)
+           .add(voronoi(2).pixelate(50)))
+  //.pixelate(800)
+  .out(o1)
+
+src(o1)
+.colorama(0.2)
+  .brightness(() => (Math.sin(time))/2)
+  .saturate(2)
+  .diff(osc(2, 2, 1)
+       .color(1, 0, 0.5)
+       .pixelate(10)
+      .kaleid(5)
+       )
+.out()
+
