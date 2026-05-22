@@ -1,6 +1,6 @@
 //kelly's day in the park 
-s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking.mp4")
-s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/walking2.mp4")
+s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking%20shorter.mp4")
+s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/TEST%20for%20Kelly's%20.mp4")
 
 a.show()
 
@@ -17,24 +17,24 @@ a.fft[3]  // bin 3 — highs
 //paranoid texture
 voronoi(350,0.55)
   	.modulateScale(osc(4).rotate(Math.sin(time/2)),.8)
-  	.thresh(.8)
+  	.thresh(.5)
 	.modulateRotate(osc(3),.2)
   	//.diff(src(o0).scale(5.8))
 	.modulateScale(osc(2).modulateRotate(o0,.4, 4))
 	.diff(src(o0).rotate([3,1,2,4]).scrollY(0,[-1,0])) //dizzy spinning 
 	.brightness([-.2,-.57].smooth().fast(.5))
-	.color(() => Math.sin(time) + 1,1,() => Math.cos(time) + 1)
- 	.saturate(4)
+	//.color(() => Math.sin(time) + 1,1,() => Math.cos(time) + 1)
+ 	.saturate(2)
 	.add(osc(10, 0.1, 1.2))
-    .diff(shape(16, 0.6).rotate(0, 0.1).scale(()=>Math.sin(time*4)+1))
+    .diff(shape([4, 6, 9, 12], 0.6).rotate(0, 0.1).scale(()=>Math.sin(time*4)+1))
 	.out(o0)
 
 //walking video
 src(s1)
-	//.mask(src(o0))
+	.mask(src(o0), 4)
     .out(o1)
 
-render(o1)
+//render(o1)
 
 //pleasure texture
 osc(7, 0.2, 9)
@@ -44,16 +44,14 @@ osc(7, 0.2, 9)
 	.saturate(3)
 	.brightness(-1.5)
 	.add(noise(2, 0.4, 9).colorama(0.5).posterize(3))
-	.modulate(o3, 1) //bump up amount for crunch
+	.modulate(o3, 1.5) //bump up amount for crunch
 	.out(o2)
 
 //kelly video
 src(s3)
-	.diff(o2, 9)
+	.diff(o2, 2)
 	.out(o3)
 
-//render(o3)
+render(o3)
 
-//hush()
-
-
+hush()
