@@ -1,5 +1,5 @@
 //kelly's day in the park 
-s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/walking1.mp4")
+s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking.mp4")
 s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/walking2.mp4")
 
 a.show()
@@ -31,7 +31,7 @@ voronoi(350,0.55)
 
 //walking video
 src(s1)
-	.mask(src(o0))
+	//.mask(src(o0))
     .out(o1)
 
 render(o1)
@@ -52,7 +52,7 @@ src(s3)
 	.diff(o2, 9)
 	.out(o3)
 
-render(o3)
+//render(o3)
 
 //hush()
 
