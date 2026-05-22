@@ -2,6 +2,8 @@
 s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking%20shorter.mp4")
 s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/TEST%20for%20Kelly's%20.mp4")
 
+render(o1)
+
 a.show()
 
 a.setBins(4)     // number of frequency bins (default: 4)
@@ -16,22 +18,22 @@ a.fft[3]  // bin 3 — highs
  
 //paranoid texture
 voronoi(350,0.55)
-  	.modulateScale(osc(4).rotate(Math.sin(time/2)),.8)
+  	//.modulateScale(osc(4).rotate(Math.sin(time/2)),.8)
   	.thresh(.5)
-	.modulateRotate(osc(3),.2)
-  	//.diff(src(o0).scale(5.8))
-	.modulateScale(osc(10).modulateRotate(o0,.4, 4))
-	.diff(src(o0).rotate([3,1,2,4]).scrollY(0,[-1,0])) //dizzy spinning 
+	//.modulateRotate(osc(3),.2)
+  	.diff(src(o0).scale(5.8))
+	.modulateScale(osc(10).modulateRotate(osc(3),.4, 4))
+	//.diff(src(o0).rotate([3,1,2,4]).scrollY(0,[-1,0])) //dizzy spinning 
 	.brightness([-.2,-.57].smooth().fast(.5))
 	//.color(() => Math.sin(time) + 1,1,() => Math.cos(time) + 1)
  	.saturate(22)
 	.add(voronoi(10, 2, 1.2))
-    .diff(shape([4, 6, 9, 12], 0.4+a.fft[2]).rotate(0, 0.1).scale(()=>Math.sin(time*2)+a.fft[3]+1))
+    .blend(shape([4, 6, 9, 12], 0.4+a.fft[2]).rotate(0, 0.1).scale(()=>Math.sin(time*8)+a.fft[3]+1.5))
 	.out(o0)
 
 //walking video
 src(s1)
-	.mask(src(o0), 2)
+	.mask(src(o0), 8)
     .out(o1)
 
 
@@ -49,12 +51,14 @@ osc(7, 0.2, 9)
 
 //kelly video
 src(s3)
-	.diff(o2, 1)
-	.blend(shape((()=> Math.sin(time*1.5)+9), 0.4+a.fft[2]).rotate(0, 0.1).scale(()=>Math.sin(time/2)+a.fft[3]+2))
+	.diff(o2, 0.5)
+	.blend(shape((()=> Math.sin(time*1.5)+9+a.fft[3]), 0.4+a.fft[2]).rotate(0, 0.1).scale(()=>Math.sin(time/2)+2))
 	.out(o3)
 
+s1.src.currentTime = 80
+s3.src.currentTime = 20
 
-render(o1)
-render(o3)
+
+//render(o3)
 
 //hush()
