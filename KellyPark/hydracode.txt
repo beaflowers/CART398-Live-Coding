@@ -1,8 +1,6 @@
 //kelly's day in the park 
-s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking%20shorter.mp4")
-s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/TEST%20for%20Kelly's%20.mp4")
-
-render(o1)
+// s1.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/Walking%20Short%20no%20credits.mp4")
+// s3.initVideo("https://raw.githubusercontent.com/beaflowers/CART398-Live-Coding/main/KellyPark/TEST%20for%20Kelly's%20%20NC.mp4")
 
 a.show()
 
@@ -36,8 +34,6 @@ src(s1)
 	.mask(src(o0), 8)
     .out(o1)
 
-
-
 //pleasure texture
 osc(7, 0.2, 9)
 	.posterize(30)
@@ -55,10 +51,5 @@ src(s3)
 	.blend(shape((()=> Math.sin(time*1.5)+9+a.fft[3]), 0.4+a.fft[2]).rotate(0, 0.1).scale(()=>Math.sin(time/2)+2))
 	.out(o3)
 
-s1.src.currentTime = 80
-s3.src.currentTime = 20
-
-
-//render(o3)
-
+render(o3)
 //hush()
